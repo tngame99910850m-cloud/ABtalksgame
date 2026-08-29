@@ -1,9 +1,9 @@
 {
-  "name": "abtalks-web-app",
+  "name": "abtalks-card-game",
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "description": "A cinematic, minimalist web app inspired by the #ABtalks interview show.",
+  "description": "A cinematic, minimalist web version of the #ABtalks conversation card game.",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

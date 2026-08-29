@@ -1,31 +1,30 @@
 import { useState } from 'react'
 import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import GuestsMarquee from './components/GuestsMarquee'
-import EpisodesGrid from './components/EpisodesGrid'
-import VideoPlayer from './components/VideoPlayer'
+import DeckSelect from './components/DeckSelect'
+import GameTable from './components/GameTable'
 import Footer from './components/Footer'
-import { featured } from './data/episodes'
 
 export default function App() {
-  const [active, setActive] = useState(null)
+  const [deck, setDeck] = useState(null)
 
-  const play = (episode) => setActive(episode)
-  const close = () => setActive(null)
+  const goHome = () => {
+    setDeck(null)
+    window.scrollTo({ top: 0 })
+  }
 
   return (
-    <div className="min-h-screen bg-ink-950 text-white antialiased">
-      <Navbar />
+    <div className="flex min-h-screen flex-col bg-ink-950 text-white antialiased">
+      <Navbar onHome={goHome} inGame={!!deck} />
 
-      <main>
-        <Hero onWatch={() => play(featured)} />
-        <GuestsMarquee />
-        <EpisodesGrid onPlay={play} />
+      <main className="flex-1">
+        {deck ? (
+          <GameTable deck={deck} onExit={goHome} />
+        ) : (
+          <DeckSelect onPick={setDeck} />
+        )}
       </main>
 
-      <Footer />
-
-      <VideoPlayer episode={active} onClose={close} />
+      {!deck && <Footer />}
     </div>
   )
 }

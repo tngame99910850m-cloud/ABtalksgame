@@ -1,62 +1,62 @@
-# #ABtalks — Web App
+# #ABtalks — The Card Game
 
-A modern, fully responsive single-page app that replicates the cinematic,
-minimalist, emotionally-raw aesthetic of **#ABtalks**, the interview show by
-Anas Bukhash. Built with **React + Vite + Tailwind CSS**.
+A modern, fully responsive web version of a **#ABtalks-style conversation card
+game** — one card, one question, the kind you'd normally avoid. Built with
+**React + Vite + Tailwind CSS** in the cinematic, minimalist, emotionally-raw
+aesthetic of #ABtalks by Anas Bukhash.
 
-> **Note:** This is an independent design tribute for demonstration. It is not
-> affiliated with, endorsed by, or an official product of #ABtalks or Anas
-> Bukhash. All guest names, quotes, and imagery are placeholders.
+> **Note:** Independent design tribute for demonstration. Not affiliated with,
+> endorsed by, or an official product of #ABtalks or Anas Bukhash. All question
+> cards are original writing.
+
+## How it plays
+
+1. **Pick a deck** — choose the depth you're ready for.
+2. **Draw a card** — tap the face-down card to flip and reveal the question.
+3. **Answer honestly**, then draw the next. Deck auto-shuffles when exhausted.
+
+Keyboard: **Space / →** reveal & advance · **Esc** back to decks.
+
+## Decks
+
+| Deck          | Vibe                                        |
+| ------------- | ------------------------------------------- |
+| The Self      | Introspective — meet the person you avoid   |
+| Love & Bonds  | The people who shaped your heart            |
+| Roots         | Where you come from never leaves            |
+| The Shadow    | Fears, regrets, and the road not taken      |
+| Purpose       | Why you're really here                      |
+| Wildcard      | Lighter, but never shallow                  |
+
+Each deck has its own accent color and 15 original cards. Edit them in
+`src/data/decks.js`.
 
 ## Design system
 
-| Token        | Value                                   |
-| ------------ | --------------------------------------- |
-| Background   | Deep black `#000000` / `#0a0a0a`        |
-| Text         | Stark white `#ffffff`                   |
-| Accent       | Signature AB red `#e50914`              |
-| Typography   | Inter (geometric sans), very bold heads |
-| Motion       | `cubic-bezier(0.16, 1, 0.3, 1)` easing  |
-| Imagery      | Grayscale → color on hover, slow zoom   |
-
-## Components
-
-- **Navbar** — transparent → blurred-black on scroll, animated underlines, mobile menu.
-- **Hero** — full-viewport cinematic background, tagline *"Discover the human behind the title,"* and a **Watch Latest Episode** CTA.
-- **Guests marquee** — continuous scrolling guest names (pauses on hover).
-- **Episodes grid** — responsive (1 → 2 → 3 columns) cards with 16:9 thumbnails, episode number, guest name, and a thought-provoking quote.
-- **Video player** — theater-mode modal: large 16:9 stage, title, view count, faux transport bar, and clickable chapters/timestamps.
-- **Footer** — newsletter signup, social links, and copyright.
-
-The cinematic thumbnails are generated as inline SVG data-URIs
-(`src/data/placeholder.js`) so the app looks premium with **zero external
-image requests**. Swap them for real thumbnails/portraits to nail the vibe.
+- **Palette:** deep black `#000000` / `#0a0a0a`, stark white, signature AB red `#e50914`, plus a per-deck accent.
+- **Type:** Inter, very bold tracked-in headings, thin elegant subtext.
+- **Motion:** 3D card flip, cinematic `cubic-bezier(0.16, 1, 0.3, 1)` easing, ambient deck glows, grayscale-to-color hovers.
 
 ## Getting started
 
 ```bash
 npm install
-npm run dev      # start the dev server
+npm run dev      # dev server
 npm run build    # production build → dist/
-npm run preview  # preview the production build
+npm run preview  # preview the build
 ```
 
-## Project structure
+## Structure
 
 ```
 src/
-  App.jsx                 # composes the page + player state
+  App.jsx                 # deck-select ↔ game-table state
   main.jsx                # React entry
   index.css               # Tailwind layers + base theme
-  data/
-    episodes.js           # sample episodes + chapters
-    placeholder.js        # cinematic SVG thumbnail generator
+  data/decks.js           # decks + question cards
   components/
     Navbar.jsx
-    Hero.jsx
-    GuestsMarquee.jsx
-    EpisodesGrid.jsx
-    EpisodeCard.jsx
-    VideoPlayer.jsx
+    DeckSelect.jsx        # landing + deck picker + how-to-play
+    GameTable.jsx         # the flipping card, shuffle, progress
     Footer.jsx
 ```
