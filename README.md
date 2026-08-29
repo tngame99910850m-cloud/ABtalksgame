@@ -13,9 +13,24 @@ aesthetic of #ABtalks by Anas Bukhash.
 
 1. **Pick a deck** — choose the depth you're ready for.
 2. **Draw a card** — tap the face-down card to flip and reveal the question.
-3. **Answer honestly**, then draw the next. Deck auto-shuffles when exhausted.
+3. **Write your reply** (optional) — jot your answer; it's saved on your device.
+4. **Answer honestly**, then draw the next. Deck auto-shuffles when exhausted.
 
 Keyboard: **Space / →** reveal & advance · **Esc** back to decks.
+
+## Bilingual — English & Arabic (RTL)
+
+#ABtalks lives in two languages, so this does too. Toggle **EN | ع** in the
+navbar and the whole app switches — UI strings and every card — and the layout
+flips to full **right-to-left** with a matching Arabic typeface (Tajawal). Your
+language choice is remembered.
+
+## Your replies
+
+Each card has an optional **reply** box. What you write is saved to
+`localStorage` (keyed per deck + card), so it's private to your device and
+still there when you come back to that card — a little journal of your honest
+answers. Clearing the text removes it.
 
 ## Decks
 

@@ -17,6 +17,20 @@
     @apply bg-ink-950 text-white font-sans antialiased;
   }
 
+  /* Arabic: switch to a matching geometric Arabic face + comfortable leading */
+  [dir='rtl'] body,
+  [dir='rtl'] {
+    font-family: 'Tajawal', 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  }
+  /* Latin letter-spacing hurts Arabic shaping — neutralize the tight tracks */
+  [dir='rtl'] .tracking-tightest,
+  [dir='rtl'] .tracking-tight {
+    letter-spacing: 0;
+  }
+  [dir='rtl'] .eyebrow {
+    @apply tracking-[0.2em];
+  }
+
   /* Cinematic red-tinted text selection */
   ::selection {
     @apply bg-ab-red text-white;
