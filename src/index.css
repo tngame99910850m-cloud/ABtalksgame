@@ -13,6 +13,13 @@
     text-rendering: optimizeLegibility;
   }
 
+  html,
+  body {
+    /* Ambient glows extend past the edges; never let them scroll the page. */
+    overflow-x: hidden;
+    width: 100%;
+  }
+
   body {
     @apply bg-ink-950 text-white font-sans antialiased;
   }

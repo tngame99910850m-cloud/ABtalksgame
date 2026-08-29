@@ -13,7 +13,7 @@ export default function App() {
   }
 
   return (
-    <div className="flex min-h-screen flex-col bg-ink-950 text-white antialiased">
+    <div className="flex min-h-screen flex-col overflow-x-hidden bg-ink-950 text-white antialiased">
       <Navbar onHome={goHome} inGame={!!deck} />
 
       <main className="flex-1">

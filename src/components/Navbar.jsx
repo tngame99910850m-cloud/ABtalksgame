@@ -20,17 +20,20 @@ export default function Navbar({ onHome, inGame }) {
           : 'border-b border-transparent bg-gradient-to-b from-black/70 to-transparent'
       }`}
     >
-      <nav className="mx-auto flex max-w-8xl items-center justify-between px-5 py-4 sm:px-8">
-        <button onClick={onHome} className="select-none text-xl font-black tracking-tightest">
-          <span dir="ltr" className="inline-block">
+      <nav className="mx-auto flex max-w-8xl items-center justify-between gap-3 px-4 py-4 sm:px-8">
+        <button
+          onClick={onHome}
+          className="flex min-w-0 shrink items-center gap-2 select-none text-lg font-black tracking-tightest sm:text-xl"
+        >
+          <span dir="ltr" className="whitespace-nowrap">
             <span className="text-ab-red">#</span>ABtalks
           </span>
-          <span className="mx-2 align-middle text-[0.6rem] font-medium uppercase tracking-[0.3em] text-white/40">
+          <span className="hidden truncate align-middle text-[0.6rem] font-medium uppercase tracking-[0.3em] text-white/40 sm:inline">
             {t('nav.suffix')}
           </span>
         </button>
 
-        <div className="flex items-center gap-2">
+        <div className="flex shrink-0 items-center gap-2">
           {/* Language toggle */}
           <button
             onClick={toggle}
@@ -44,7 +47,7 @@ export default function Navbar({ onHome, inGame }) {
 
           <button
             onClick={onHome}
-            className="rounded-full border border-white/15 px-5 py-2 text-sm font-medium text-white transition-all duration-300 hover:border-ab-red hover:bg-ab-red"
+            className="whitespace-nowrap rounded-full border border-white/15 px-4 py-2 text-sm font-medium text-white transition-all duration-300 hover:border-ab-red hover:bg-ab-red sm:px-5"
           >
             {inGame ? t('nav.changeDeck') : t('nav.decks')}
           </button>
