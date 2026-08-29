@@ -25,6 +25,14 @@ navbar and the whole app switches — UI strings and every card — and the layo
 flips to full **right-to-left** with a matching Arabic typeface (Tajawal). Your
 language choice is remembered.
 
+## Quote of the day
+
+The landing page shows a **quote that rotates every 24 hours**. It's picked
+deterministically from the date (`src/data/quotes.js`), so everyone sees the
+same line all day and it flips at midnight (UTC) — no backend or cron needed.
+A tab left open overnight advances itself at midnight too. Quotes are original,
+bilingual, and easy to extend.
+
 ## Your replies
 
 Each card has an optional **reply** box. What you write is saved to

@@ -19,6 +19,7 @@ const ui = {
   },
   'land.start': { en: 'Start', ar: 'ابدأ' },
   'land.cards': { en: 'cards', ar: 'بطاقة' },
+  'land.quote': { en: 'Quote of the day', ar: 'اقتباس اليوم' },
 
   'game.decks': { en: 'Decks', ar: 'المجموعات' },
   'game.reveal': { en: 'Reveal', ar: 'اكشف' },

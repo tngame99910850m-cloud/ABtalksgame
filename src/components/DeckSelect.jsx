@@ -1,5 +1,6 @@
 import { decks } from '../data/decks'
 import { useLang } from '../i18n.jsx'
+import QuoteOfDay from './QuoteOfDay'
 
 const howto = {
   en: [
@@ -50,6 +51,8 @@ export default function DeckSelect({ onPick }) {
         <p className="mx-auto mt-7 max-w-xl animate-fade-up text-base font-light leading-relaxed text-white/60 [animation-delay:120ms]">
           {t('land.intro')}
         </p>
+
+        <QuoteOfDay />
       </div>
 
       {/* Deck grid */}
